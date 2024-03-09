@@ -8,10 +8,13 @@ import { Character } from '../../interfaces/character.interface';
 })
 export class DbzListComponent {
 @Input() public characterList: Character[] = [];
-@Output() public onDeleteId: EventEmitter<number> = new EventEmitter();
+@Output() public onDeleteId: EventEmitter<string> = new EventEmitter();
 
-onDeleteCharacter(index: number):void {
-  this.onDeleteId.emit(index);
+onDeleteCharacter(id?: string):void {
+
+  if(!id) return;//Si no viene id no se llama al onDeleteId.emit
+
+  this.onDeleteId.emit(id);
 }
 
 }

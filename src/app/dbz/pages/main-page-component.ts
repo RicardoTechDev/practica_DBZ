@@ -9,7 +9,7 @@ import { DbzService } from '../services/dbz.service';
 
 export class MainPageComponent implements OnInit {
 
-
+  //Se dejo como public el service para tener accesp em el html
   constructor(public dbzService:DbzService) { }
 
   ngOnInit() { }
