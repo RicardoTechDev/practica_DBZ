@@ -2,9 +2,11 @@
 <hr>
 <div class="row">
   <div class="col">
-  <app-dbz-list [characterList]="character"></app-dbz-list>
+  <app-dbz-list [characterList]="characters"></app-dbz-list>
   </div>
   <div class="col">
-    <app-dbz-add-character></app-dbz-add-character>
+    <!-- el componente padre esta a la espera de lo que emita app-dbz-add-character
+    para luego hacer o ejecutar onNewCharacter() -->
+    <app-dbz-add-character (onNewCharacter)="onNewCharacter($event)" ></app-dbz-add-character>
   </div>
 </div>

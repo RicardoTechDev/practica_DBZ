@@ -7,7 +7,7 @@ import { Character } from '../interfaces/character.interface';
 })
 
 export class MainPageComponent implements OnInit {
-  public character: Character[] = [
+  public characters: Character[] = [
     {
       name: 'Krillin',
       power: 1000
@@ -25,4 +25,8 @@ export class MainPageComponent implements OnInit {
   constructor() { }
 
   ngOnInit() { }
+
+  onNewCharacter(character: Character):void {
+    this.characters.push(character);
+  }
 }

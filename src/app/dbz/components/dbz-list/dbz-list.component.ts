@@ -8,5 +8,5 @@ import { Character } from '../../interfaces/character.interface';
 })
 export class DbzListComponent {
 @Input()
-public characterList: Character[] = []
+public characterList: Character[] = [];
 }
