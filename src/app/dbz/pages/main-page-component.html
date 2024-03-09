@@ -4,11 +4,11 @@
   <div class="col">
     <!-- Con [characterList]="characters" le estamos enviando información del padre al hijo y con
     (onDeleteId)="onDeleteCharacter($event)" estamos a la escucha del evento que emite el hijo -->
-  <app-dbz-list [characterList]="dbzService.characters" (onDeleteId)="dbzService.deleteCharacterById($event)"></app-dbz-list>
+  <app-dbz-list [characterList]="characters" (onDeleteId)="onDeleteCharacter($event)"></app-dbz-list>
   </div>
   <div class="col">
     <!-- el componente padre esta a la espera de lo que emita app-dbz-add-character
     para luego hacer o ejecutar onNewCharacter() -->
-    <app-dbz-add-character (onNewCharacter)="dbzService.onNewCharacter($event)" ></app-dbz-add-character>
+    <app-dbz-add-character (onNewCharacter)="onNewCharacter($event)" ></app-dbz-add-character>
   </div>
 </div>

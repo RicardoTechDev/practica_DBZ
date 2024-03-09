@@ -26,7 +26,7 @@ export class DbzService {
 
   constructor() { }
 
-  onNewCharacter(character: Character):void {
+  addCharacter(character: Character):void {
     //con ...character  recuperamos todas las otras propiedades de character sin tener que nombrarlas una a una
     let NewCharacter = {id: uuid(), ...character };
     this.characters.push(NewCharacter);

@@ -9,9 +9,20 @@ import { DbzService } from '../services/dbz.service';
 
 export class MainPageComponent implements OnInit {
 
-  //Se dejo como public el service para tener accesp em el html
-  constructor(public dbzService:DbzService) { }
+  constructor(private dbzService:DbzService) { }
 
   ngOnInit() { }
+
+  get characters(): Character[] {
+    return [...this.dbzService.characters]; //con ... creamos una copia de lo que tenemos en el service
+  }
+
+  onDeleteCharacter(id:string):void {
+    this.dbzService.deleteCharacterById(id);
+  }
+
+  onNewCharacter(character: Character):void {
+    this.dbzService.addCharacter(character);
+  }
 
 }
